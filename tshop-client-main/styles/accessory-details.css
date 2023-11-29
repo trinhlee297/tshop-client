@@ -1,0 +1,274 @@
+/* ----- COMMON ----- */
+
+@font-face {
+	font-family: Agbalumo;
+	src: url(../fonts/Agbalumo-Regular.ttf);
+}
+
+@font-face {
+	font-family: BungeeSpice;
+	src: url(../fonts/BungeeSpice-Regular.ttf);
+}
+
+:root {
+	--color: #ffffff;
+	--color-active: #4bcffa;
+	--background-color: #252525;
+	--border-color: #ffffff;
+	--background-color-odd: #1dd1a1;
+	--background-color-even: #10ac84;
+	--background-color-hover: #01a3a4;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	cursor: url(../images/cursor_default.png), default;
+	min-height: 100dvh;
+	font-family: Agbalumo;
+	font-size: clamp(1em, 3vmin, 1.25em);
+	font-weight: normal;
+	line-height: 1.5;
+	color: var(--color);
+	background: url(../images/background.webp) center / cover fixed no-repeat;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ----- HEADER ----- */
+
+header {
+	font-family: BungeeSpice;
+	text-align: center;
+	padding: 16px 24px;
+}
+
+/* ----- BODY ----- */
+
+p:first-child {
+	font-family: BungeeSpice;
+}
+
+a {
+	color: var(--color);
+	text-decoration: none;
+	cursor: url(../images/cursor_pointer.png), pointer;
+
+	&.active,
+	&:hover {
+		color: var(--color-active);
+		text-decoration: underline;
+	}
+}
+
+button {
+	font-size: inherit;
+	font-family: inherit;
+	cursor: url(../images/cursor_pointer.png), pointer;
+}
+
+input {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+.container {
+	flex: 1;
+	display: flex;
+}
+
+aside {
+	padding: 16px 24px;
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+	position: sticky;
+	top: 16px;
+}
+
+main {
+	flex: 1;
+	padding: 16px 24px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 24px;
+}
+
+form {
+	max-width: 560px;
+	padding: 16px 24px;
+	border-radius: 8px;
+	background-color: #25252599;
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+}
+
+.form-control {
+	display: flex;
+	flex-direction: column;
+
+	> label::after {
+		content: " *";
+		color: #ff0000;
+	}
+
+	> input {
+		height: 40px;
+		padding: 0 8px;
+	}
+}
+
+.form-submit {
+	& .save-wrapper {
+		display: inline-block;
+		position: relative;
+	}
+
+	& button {
+		padding: 4px 12px;
+	}
+}
+
+.loading-wrapper {
+	position: relative;
+}
+
+.table-wrapper {
+	max-height: 400px;
+	overflow: scroll;
+	border: 1px solid var(--border-color);
+}
+
+table {
+	width: 100%;
+	height: 100%;
+	color: var(--color);
+	border-spacing: 0;
+}
+
+thead {
+	position: sticky;
+	top: 0;
+	background-color: var(--background-color-even);
+
+	& th {
+		border-right: 1px solid var(--border-color);
+		border-bottom: 1px solid var(--border-color);
+		padding: 4px 8px;
+
+		&:hover {
+			color: var(--color);
+			background-color: var(--background-color-hover);
+		}
+	}
+}
+
+tbody {
+	& tr:nth-child(odd) {
+		background-color: var(--background-color-odd);
+	}
+
+	& tr:nth-child(even) {
+		background-color: var(--background-color-even);
+	}
+
+	& tr:hover {
+		background-color: var(--background-color-hover);
+	}
+
+	& td:last-child {
+		text-align: center;
+	}
+
+	& td {
+		border-right: 1px solid var(--border-color);
+		border-bottom: 1px solid var(--border-color);
+		padding: 4px 8px;
+
+		& button {
+			padding: 4px 12px;
+		}
+	}
+}
+
+.loading {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: var(--background-color);
+	display: grid;
+
+	&::after {
+		content: "";
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		border-width: 4px;
+		border-style: solid;
+		border-color: #d87093 transparent;
+		animation: rotate 400ms linear infinite;
+		place-self: center;
+	}
+
+	&.loading-sm::after {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+@keyframes rotate {
+	to {
+		rotate: 1turn;
+	}
+}
+
+.pagination {
+	display: flex;
+	justify-content: end;
+	gap: 24px;
+	margin-top: 8px;
+}
+
+.pagination-size > select {
+	padding: 0 8px;
+	font-size: inherit;
+	font-family: inherit;
+	cursor: url(../images/cursor_pointer.png), pointer;
+}
+
+.pagination-controls {
+	display: flex;
+
+	> input {
+		width: 56px;
+		text-align: center;
+	}
+
+	> button {
+		width: 48px;
+	}
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+	text-align: center;
+	padding: 16px 24px;
+	background-color: var(--background-color);
+}

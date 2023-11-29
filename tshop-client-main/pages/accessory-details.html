@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>KShop | Accessory Details</title>
+		<link type="image/png" sizes="32x32" rel="icon" href="../images/favicon.png" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		<link rel="stylesheet" href="../styles/accessory-details.css" />
+	</head>
+	<body>
+		<header><h1>AUTOMOTIVE REPAIR</h1></header>
+		<div class="container">
+			<aside>
+				<div class="menu">
+					<p><b>MENU:</b></p>
+					<p><a href="./add-new-car.html">Add a new car</a></p>
+					<p><a href="./car-management.html">Cars management</a></p>
+				</div>
+			</aside>
+			<main>
+				<form id="accessory-form">
+					<p><b>ACCESSORY DETAILS:</b></p>
+					<div class="form-control">
+						<label for="id">Id</label>
+						<input type="number" name="id" id="id" placeholder="1" disabled />
+					</div>
+					<div class="form-control">
+						<label for="license-plate">License plate</label>
+						<input
+							type="text"
+							name="licensePlate"
+							id="license-plate"
+							maxlength="11"
+							placeholder="21-B1 14275"
+							disabled
+							required />
+					</div>
+					<div class="form-control">
+						<label for="repair-date">Repair date</label>
+						<input type="date" name="repairDate" id="repair-date" disabled required />
+					</div>
+					<div class="form-control">
+						<label for="name">Name</label>
+						<input
+							type="text"
+							name="name"
+							id="name"
+							placeholder="Lọc gió"
+							disabled
+							required />
+					</div>
+					<div class="form-control">
+						<label for="price">Price</label>
+						<input
+							type="text"
+							name="price"
+							id="price"
+							placeholder="100.000"
+							disabled
+							required />
+					</div>
+					<div class="form-control">
+						<label for="status-damaged">Status damaged</label>
+						<input
+							type="text"
+							name="statusDamaged"
+							id="status-damaged"
+							placeholder="Bị bụi bẩn"
+							disabled
+							required />
+					</div>
+					<div class="form-control">
+						<label for="repair-status">Repair status</label>
+						<input
+							type="text"
+							name="repairStatus"
+							id="repair-status"
+							placeholder="Làm sạch"
+							disabled
+							required />
+					</div>
+					<div class="form-submit">
+						<span class="save-wrapper">
+							<button type="submit" disabled>Save Accessory</button>
+							<span class="loading loading-sm"></span>
+						</span>
+						<button type="reset" disabled>Reset</button>
+					</div>
+				</form>
+				<div>
+					<div class="loading-wrapper">
+						<div class="table-container">
+							<table>
+								<thead>
+									<tr>
+										<th>No <i class="fa fa-solid fa-sort fa-xs"></i></th>
+										<th>
+											License plate <i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>
+											Repair date <i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>Name <i class="fa fa-solid fa-sort fa-xs"></i></th>
+										<th>Price <i class="fa fa-solid fa-sort fa-xs"></i></th>
+										<th>
+											Status damaged <i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>
+											Repair status <i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+								<tbody id="accessories"></tbody>
+							</table>
+						</div>
+						<div class="loading"></div>
+					</div>
+					<div class="pagination">
+						<span class="pagination-size">
+							<select title="Số bản ghi mỗi trang" id="size" disabled>
+								<option value="5" selected>5</option>
+								<option value="10">10</option>
+								<option value="20">20</option>
+							</select>
+							<span>Record(s) per page.</span>
+						</span>
+						<span class="pagination-controls">
+							<button title="Trang đầu tiên" type="button" id="first-page" disabled>
+								<i class="fa-solid fa-angles-left"></i>
+							</button>
+							<button title="Trang trước" type="button" id="prev-page" disabled>
+								<i class="fa-solid fa-angle-left"></i>
+							</button>
+							<input
+								title="Trang hiện tại"
+								type="number"
+								name="page"
+								id="page"
+								value="1"
+								placeholder="1"
+								disabled />
+							<button title="Trang sau" type="button" id="next-page" disabled>
+								<i class="fa-solid fa-angle-right"></i>
+							</button>
+							<button title="Trang cuối cùng" type="button" id="last-page" disabled>
+								<i class="fa-solid fa-angles-right"></i>
+							</button>
+						</span>
+					</div>
+				</div>
+			</main>
+		</div>
+		<footer><i>BASED ON SPRING FRAMEWORK</i></footer>
+		<script src="../scripts/accessory-details.js"></script>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+/* ----- COMMON ----- */
+
+@font-face {
+	font-family: Agbalumo;
+	src: url(./fonts/Agbalumo-Regular.ttf);
+}
+
+@font-face {
+	font-family: BungeeSpice;
+	src: url(./fonts/BungeeSpice-Regular.ttf);
+}
+
+:root {
+	--color: #ffffff;
+	--color-active: #4bcffa;
+	--background-color: #252525;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	cursor: url(./images/cursor_default.png), default;
+	min-height: 100dvh;
+	font-family: Agbalumo;
+	font-size: clamp(1em, 3vmin, 1.25em);
+	font-weight: normal;
+	line-height: 1.5;
+	color: var(--color);
+	background: url(./images/background.webp) center / cover fixed no-repeat;
+	display: flex;
+	flex-direction: column;
+}
+
+/* ----- HEADER ----- */
+
+header {
+	font-family: BungeeSpice;
+	text-align: center;
+	padding: 16px 24px;
+}
+
+/* ----- BODY ----- */
+
+p:first-child {
+	font-family: BungeeSpice;
+}
+
+a {
+	color: var(--color);
+	text-decoration: none;
+	cursor: url(./images/cursor_pointer.png), pointer;
+
+	&:hover {
+		color: var(--color-active);
+		text-decoration: underline;
+	}
+}
+
+.container {
+	flex: 1;
+	display: flex;
+}
+
+aside {
+	padding: 16px 24px;
+}
+
+.menu {
+	display: flex;
+	flex-direction: column;
+	row-gap: 16px;
+	position: sticky;
+	top: 16px;
+}
+
+main {
+	flex: 1;
+	padding: 16px 24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.25em;
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+	text-align: center;
+	padding: 16px 24px;
+	background-color: var(--background-color);
+}

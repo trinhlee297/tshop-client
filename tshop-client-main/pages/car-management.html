@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>KShop | Car Management</title>
+		<link type="image/png" sizes="32x32" rel="icon" href="../images/favicon.png" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+		<link rel="stylesheet" href="../styles/car-management.css" />
+	</head>
+	<body>
+		<header><h1>AUTOMOTIVE REPAIR</h1></header>
+		<div class="container">
+			<aside>
+				<div class="menu">
+					<p><b>MENU:</b></p>
+					<p><a href="./add-new-car.html">Add new car</a></p>
+					<p><a href="./car-management.html" class="active">Car management</a></p>
+				</div>
+			</aside>
+			<main>
+				<form id="car-update-form">
+					<p><b>CAR DETAILS:</b></p>
+					<div class="form-control">
+						<label for="license-plate">License plate</label>
+						<input
+							type="text"
+							name="licensePlate"
+							id="license-plate"
+							maxlength="10"
+							placeholder="21-B1 14275"
+							disabled
+							required />
+					</div>
+					<div class="form-control">
+						<label for="repair-date">Repair date</label>
+						<input type="date" name="repairDate" id="repair-date" disabled required />
+					</div>
+					<div class="form-control">
+						<label for="customer-name">Customer name</label>
+						<input
+							type="text"
+							name="customerName"
+							id="customer-name"
+							maxlength="50"
+							placeholder="Nông Văn Trình"
+							disabled
+							required />
+					</div>
+					<div class="form-control">
+						<label for="catalog">Catalog</label>
+						<input
+							type="text"
+							name="catalog"
+							id="catalog"
+							maxlength="50"
+							placeholder="Bảo dưỡng định kỳ lần 1"
+							disabled
+							required />
+					</div>
+					<div class="form-control">
+						<label for="car-maker">Car maker</label>
+						<input
+							type="text"
+							name="carMaker"
+							id="car-maker"
+							maxlength="50"
+							placeholder="Toyota"
+							disabled
+							required />
+					</div>
+					<div class="form-submit">
+						<span class="save-wrapper">
+							<button type="submit" disabled>Save Car</button>
+							<span class="loading loading-sm"></span>
+						</span>
+						<button type="reset" disabled>Reset</button>
+					</div>
+				</form>
+				<div>
+					<div class="loading-wrapper">
+						<div class="table-wrapper">
+							<table>
+								<thead>
+									<tr>
+										<th>
+											License plate
+											<i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>
+											Repair date
+											<i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>
+											Customer name
+											<i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>
+											Catalog
+											<i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>
+											Car maker
+											<i class="fa fa-solid fa-sort fa-xs"></i>
+										</th>
+										<th>Actions</th>
+									</tr>
+								</thead>
+								<tbody id="cars"></tbody>
+							</table>
+							<div class="loading"></div>
+						</div>
+					</div>
+					<div class="pagination">
+						<span class="pagination-size">
+							<select title="Số bản ghi mỗi trang" id="size" disabled>
+								<option value="5" selected>5</option>
+								<option value="10">10</option>
+								<option value="20">20</option>
+							</select>
+							<span>Record(s) per page.</span>
+						</span>
+						<span class="pagination-controls">
+							<button title="Trang đầu tiên" type="button" id="first-page" disabled>
+								<i class="fa-solid fa-angles-left"></i>
+							</button>
+							<button title="Trang trước" type="button" id="prev-page" disabled>
+								<i class="fa-solid fa-angle-left"></i>
+							</button>
+							<input
+								title="Trang hiện tại"
+								type="number"
+								name="page"
+								id="page"
+								value="1"
+								placeholder="1"
+								disabled />
+							<button title="Trang sau" type="button" id="next-page" disabled>
+								<i class="fa-solid fa-angle-right"></i>
+							</button>
+							<button title="Trang cuối cùng" type="button" id="last-page" disabled>
+								<i class="fa-solid fa-angles-right"></i>
+							</button>
+						</span>
+					</div>
+				</div>
+			</main>
+		</div>
+		<footer><i>BASED ON SPRING FRAMEWORK</i></footer>
+		<script src="../scripts/car-management.js"></script>
+	</body>
+</html>
